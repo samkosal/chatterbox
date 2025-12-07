@@ -172,8 +172,20 @@ public class ChatterboxClient {
         this.userInput = new Scanner(userInput, StandardCharsets.UTF_8);
         this.userOutput = userOutput;
 
-        throw new UnsupportedOperationException("Constructor not yet implemented. Implement ChatterboxClient constructor and remove this exception");
+        // throw new UnsupportedOperationException("Constructor not yet implemented. Implement ChatterboxClient constructor and remove this exception");
         // TODO: copy options.getHost(), getPort(), getUsername(), getPassword() into fields
+        
+        //copy all of these into existing fields at the very top (instances).
+        try {
+            this.host = options.getHost();
+            this.port = options.getPort();
+            this.username = options.getUsername();
+            this.password = options.getPassword();
+        } catch (UnsupportedOperationException e) {
+            System.err.println("Constructor not yet implemented. Implement ChatterboxClient constructor and remove this exception");
+        }
+        
+       
     }
 
     /**
